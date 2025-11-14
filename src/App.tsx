@@ -67,6 +67,81 @@ const LatihanDropdown = () => {
     </div>
   )
 }
+
+const RadioButtonExample = () => {
+  const [selectedOption, setSelectedOption] = useState<String>('');
+  const handleOptionChange = (event: any) => {
+    setSelectedOption(event.target.value);
+  };
+
+  return (
+    <div>
+      <h2>Pilih warna favorit</h2>
+      <div>
+        <label >
+          <input type="radio" name='favColor' value={'merah'} checked={selectedOption === 'merah'} onChange={handleOptionChange} />
+          Merah
+        </label>
+      </div>
+      <div>
+        <label >
+          <input type="radio" name='favColor' value={'biru'} checked={selectedOption === 'biru'} onChange={handleOptionChange} />
+          Biru
+        </label>
+      </div>
+      <div>
+        <label >
+          <input type="radio" name='favColor' value={'hijau'} checked={selectedOption === 'hijau'} onChange={handleOptionChange} />
+          Hijau
+        </label>
+      </div>
+      <p>Pilihan Anda: {selectedOption}</p>
+    </div>
+  )
+}
+
+const CheckboxExample = () => {
+  const [checkedItems, setCheckedItems] = useState({
+    jeruk: false,
+    apel: false,
+    mangga: false,
+  });
+
+  const handleCheckboxChange = (event: any) => {
+    const { name, checked } = event.target;
+    setCheckedItems({ ...checkedItems, [name]: checked })
+  }
+
+  return (
+    <div>
+      <h2>Pilih Buah favorit!</h2>
+      <div>
+        <label>
+          <input type="checkbox" name='jeruk' checked={checkedItems.jeruk} onChange={handleCheckboxChange} />
+          Jeruk
+        </label>
+        <label>
+          <input type="checkbox" name='apel' checked={checkedItems.apel} onChange={handleCheckboxChange} />
+          Apel
+        </label>
+        <label>
+          <input type="checkbox" name='mangga' checked={checkedItems.mangga} onChange={handleCheckboxChange} />
+          Mangga
+        </label>
+      </div>
+      <h3>Buah yang dipilih:</h3>
+      <ul>
+        {Object.keys(checkedItems)
+          .filter((key) => checkedItems[key as keyof typeof checkedItems])
+          .map((key) => (
+            <li key={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</li>
+          ))}
+      </ul>
+    </div>
+  )
+}
+
+
 function App() {
   return (
     <div className="App">
@@ -76,6 +151,8 @@ function App() {
         <ChangeExample />
         <Latihan1 />
         <LatihanDropdown />
+        <RadioButtonExample />
+        <CheckboxExample />
       </header>
     </div>
   );
