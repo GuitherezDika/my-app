@@ -12,57 +12,7 @@ src/
 
 LEVEL 2
 ⭐ 1. Conditional Rendering (IF, Ternary, Logical &&)
-(A) Tampilkan text jika input ≥ 10 karakter
-
-Latihan:
-
-Jika jumlah karakter < 10 → warnanya merah
-
-Jika ≥ 10 → hijau
-
-Challenge: buat dengan ternary operator.
-
-==
-(B) Tampilkan loader
-
-Buat state:
-
-const [loading, setLoading] = useState(false);
-
-
-Skenario:
-
-Klik tombol → loading = true
-
-Setelah 2 detik → loading = false dan tampilkan data
-
-Pakai:
-
-{loading ? <p>Loading...</p> : <p>Data Loaded</p>}
-
-==
 ⭐ 2. Event Handling (lebih kompleks)
-(A) Input yang validasi panjang karakter
-
-Latihan:
-
-Jika karakter < 5 → tampilkan: “Minimal 5 karakter”
-
-Jika valid → tampilkan: “OK!”
-
-(B) Event onFocus & onBlur
-
-Latihan:
-
-Saat input focus → border biru
-
-Saat blur → border hitam
-
-Simpan dalam state:
-
-const [isFocused, setIsFocused] = useState(false);
-
-==
 ⭐ 3. Lists + TS Lanjutan
 (A) List dengan object + TypeScript interface
 

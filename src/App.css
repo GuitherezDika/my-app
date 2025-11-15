@@ -11,3 +11,11 @@
   font-weight: bold;
   text-decoration: underline;
 }
+
+.App {
+  padding: 16px;
+}
+.warning {
+  color: blue;
+  font-size: 10px;
+}
